@@ -1,11 +1,16 @@
 # CMakeLists for lua
-PROJECT ( LUA C )
+PROJECT ( LUA )
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 SET ( name lua )
 FILE ( GLOB_RECURSE	source_files src/*.c )
 
 INCLUDE_DIRECTORIES     ( src )
+add_library (lualib STATIC lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.c lfunc.c lgc.c llex.c lmem.c lobject.c lopcodes.c lparser.c lstate.c lstring.c ltable.c ltm.c lundump.c lvm.c lzio.c lauxlib.c lbaselib.c lbitlib.c lcorolib.c ldblib.c liolib.c lmathlib.c loslib.c lstrlib.c ltablib.c lutf8lib.c loadlib.c linit.c)
+add_executable(lua lua.c)
+add_executable(luac luac.c)
+target_link_libraries(lua lualib)
+target_link_libraries(luac lualib)
 ADD_LIBRARY             ( ${name} STATIC ${source_files} )
 INSTALL (TARGETS ${name} DESTINATION lib)
 
