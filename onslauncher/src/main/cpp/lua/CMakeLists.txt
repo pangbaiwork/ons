@@ -6,7 +6,6 @@ SET ( name lua )
 FILE ( GLOB_RECURSE	source_files src/*.c )
 
 INCLUDE_DIRECTORIES     ( src )
-add_library (lualib STATIC lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.c lfunc.c lgc.c llex.c lmem.c lobject.c lopcodes.c lparser.c lstate.c lstring.c ltable.c ltm.c lundump.c lvm.c lzio.c lauxlib.c lbaselib.c lbitlib.c lcorolib.c ldblib.c liolib.c lmathlib.c loslib.c lstrlib.c ltablib.c lutf8lib.c loadlib.c linit.c)
 ADD_LIBRARY             ( ${name} STATIC ${source_files} )
 INSTALL (TARGETS ${name} DESTINATION lib)
 
