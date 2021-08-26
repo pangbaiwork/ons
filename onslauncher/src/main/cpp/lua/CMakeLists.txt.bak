@@ -1,5 +1,5 @@
 # CMakeLists for lua
-PROJECT ( lua )
+PROJECT ( LUA )
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 SET ( name lua )
