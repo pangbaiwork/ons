@@ -25,3 +25,12 @@ jobs:
       run:  chmod +x onslauncher/gradlew
     - name: Build with Gradle
       run: ./onslauncher/gradlew build
+    - name: find apk
+      run:  ls onslauncher/
+           
+      
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+          name:  ok
+          path:  onslauncher/build/outputs/aar/*.aar
