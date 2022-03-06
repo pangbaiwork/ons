@@ -9,4 +9,5 @@ INCLUDE_DIRECTORIES     ( src )
 ADD_LIBRARY             ( ${name} STATIC ${source_files} )
 INSTALL (TARGETS ${name} DESTINATION lib)
 
+
 TARGET_INCLUDE_DIRECTORIES  ( ${name} PUBLIC src etc )
