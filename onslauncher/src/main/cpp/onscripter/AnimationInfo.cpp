@@ -259,7 +259,7 @@ bool AnimationInfo::proceedAnimation(int current_time)
             }
         }
 
-        next_time += duration_list[ current_cell ];
+        next_time += duration_list[ current_cell * 2];
 
         if (duration_list[ current_cell ] <= 0){
             next_time = current_time;
